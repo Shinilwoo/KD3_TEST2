@@ -9,5 +9,8 @@ public class Test2Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Test2Application.class, args);
 	}
-//은아의 파일은 나옴
+
+	
 }
+	// 아무거나 올려보겠습니당 ~~~~~~~
+
