@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>로그인 애플리케이션</title>
+</head>
+<body>
+  <h1>로그인 애플리케이션
+    프로미스로 구현해보기 로그인 성공실패를
+    admin /1234만 성공으로 인정
+  </h1>
+  <input type="text" id="username" placeholder="사용자명">
+  <input type="password" id="password" placeholder="비밀번호">
+  <button id="login">로그인</button>
+  <div id="message"></div>
+
+
+
+<script>
+  // 입력받은 id와 pw를 체크해야함
+  // id부터 확인을 하고 pw를 체크
+  // 이벤트는 로그인 버튼을 눌렀을때
+
+  // 로그인 버튼의 정보를 할당해둠
+  const submit = document.querySelector('#login');
+
+  // 안내문구 출력을 위한 정보
+  let msg = document.querySelector('#message');
+
+  // 맞는 정보
+  const successId = 'admin';
+  const successPw = '1234';
+
+  // 받은 정보를 보관할 변수
+  let inputId;
+  let inputPw;
+
+  
+  function logIn(){
+    inputId = document.querySelector('#username');
+    inputId = inputId.value;
+    console.log(inputId);
+
+    inputPw = document.querySelector('#password');
+    inputPw = inputPw.value;
+    console.log(inputPw);
+
+    console.log(msg);
+
+    return new Promise((resolve, reject) => {
+      setTimeout (function() {
+        if(inputId === successId && inputPw === successPw){
+          resolve(msg.textContent = '로그인 성공!');
+        }
+        else{
+          reject(msg.textContent = '로그인 실패!');
+        }
+      })
+    });
+
+  } 
+
+  // 버튼이 눌렸을때 이벤트 발생
+  submit.addEventListener('click', () => {
+    logIn();
+  });
+
+</script>
+
+</body>
+</html>
+</body>
+</html>
